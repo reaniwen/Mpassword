@@ -31,17 +31,25 @@ def creatpassword():
 		book3.append(i)
 	for i in range(123,127):
 		book3.append(i)
-	
+	#repeat or not reapeat, that's the question
 	if diff == 1:
-		seq = random.sample(book1,len)
+		book = book1[:]
+		#seq = random.sample(book1,len)
 	elif diff == 2:
-		seq = random.sample(book2,len)
+		book = book2[:]
+		#seq = random.sample(book2,len)
 	else:
-		seq = random.sample(book3,len)
+		book = book3[:]
+		#seq = random.sample(book3,len)
+	seq = []
+	for _ in range(len):
+		seq.append(random.choice(book))
+	print seq
 	p = ''
 	for _ in seq:
 		p += chr(_)
 	print p
+	return p
 
 	
 if __name__ == "__main__":
