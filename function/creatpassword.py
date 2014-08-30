@@ -1,11 +1,11 @@
 import random
 
-def creatpassword(len,book):
-	#book = creatbook(diff)
+def creatpassword(len,diff):
+	book = creatbook(diff)
 	seq = []
 	for _ in range(len):
 		seq.append(random.choice(book))
-	print seq
+	#print seq
 	p = ''
 	for _ in seq:
 		p += chr(_)
@@ -28,6 +28,7 @@ def creatbook(diff):
 		book2.append(i)
 	#increase and control the possibility of number to 75%
 	#fail
+	#it works
 	newBook2 = book2[:]
 	for i in range(2):
 		for _ in book1:
@@ -50,7 +51,8 @@ def creatbook(diff):
 	#repeat or not reapeat, that's the question
 	#init the book
 	if diff == 1:
-		book = book1[:]
+		book = book1
+		#book = book1[:]
 	elif diff == 2:
 		book = book2[:]
 	else:
@@ -70,4 +72,5 @@ if __name__ == "__main__":
 			print "please input the difficulty you wanna creat"
 			diff = int(raw_input("(1:only number, 2:1+letter, 3:2+symbol):"))
 		book = creatbook(diff)
-		password = creatpassword(len,book)
+		#password = creatpassword(len,book)
+		password = creatpassword(len,diff)
